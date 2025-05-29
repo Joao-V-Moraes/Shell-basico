@@ -1,8 +1,5 @@
-/*Integrantes do grupo 16
-Bruno Lima Murakami                     RA:20124673
+/*Integrantes do grupo 5
 João Vitor de Moraes Marcelino França   RA:20068995
-Lucas Henrique Koda da Silva            RA:20018156
-Matheus Augusto Costa                   RA:19713866
 */
 
 #include <stdio.h>
@@ -21,13 +18,13 @@ char cwd[MAX_LINE];
 
 // Exibe a mensagem de ajuda com os comandos disponíveis
 void show_help() {
-    printf("Bem vindo ao Shell do Grupo 16!\n");
+    printf("Bem vindo ao MiniShell do Grupo 5!\n");
     printf("Comando disponiveis:\n");
     
     printf("  exit                  - Sair do Shell\n");
     printf("  cd <path>             - Altera o diretorio atual para o <path> inserido\n");
     printf("  path <dir> [<dir>...] - Define caminho(s) para busca de executáveis\n");
-    printf("  dir                   - Lista todos os diretorios possiveis a partir do atual\n");
+    printf("  pwd                   - Lista todos os diretorios possiveis a partir do atual\n");
     printf("  cat <file>            - Exibe o conteúdo do <file>\n");
     printf("  ls [-l] [-a]          - Lista o conteúdo do diretório atual com opções\n");
     printf("  help                  - Lista todas as funcionalidades disponíveis\n");
@@ -69,7 +66,7 @@ int execute_internal_command(char **args) {
         }
         printf("Caminho adicionado com sucesso!\n");
         return 1;
-    } else if (strcmp(args[0], "dir") == 0) {
+    } else if (strcmp(args[0], "pwd") == 0) {
         getcwd(cwd, sizeof(cwd));
         printf("Diretorio atual: %s \n", cwd);
         printf("--------------------------------------------------------------------------------\n"); 
